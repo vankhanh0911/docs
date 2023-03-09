@@ -1,4 +1,4 @@
----
+<!-- ---
 sidebar_position: 1
 id: authentication
 title: Overview
@@ -18,14 +18,14 @@ Permissions are classified into two types.
 - **Member Authorization**:
 ![3 legged](https://netstorage.ringcentral.com/dpw/guide/images/oauth-auth-token-flow.png)
 Member Authorization or Authorization Code Flow (3-legged authorization (3LA))
-Using 3LA, a User grants permissions to your application to access the User's resources on Antsomi. Your application has no access to these resources without user approval. Use this flow if you are requesting access to a user's account to use their data and make requests on their behalf. This is the most commonly used permission type across Antsomi APIs. 
+Using 3LA, a User grants permissions to your application to access the User's resources on Antsomi. Your application has no access to these resources without user approval. Use this flow if you are requesting access to a user's account to use their data and make requests on their behalf. This is the most commonly used permission type across Antsomi APIs.
 
 
 - **Application Authorization**:
 ![2 legged](https://i.imgur.com/qjb61yG.png)
 Application Authorization or Client Credential Flow (2-legged authorization (2LA))
-Using 2LA, Antsomi grants permissions to your application to access protected Antsomi resources. If you are accessing APIs that are not user specific, use this flow. 
+Using 2LA, Antsomi grants permissions to your application to access protected Antsomi resources. If you are accessing APIs that are not user specific, use this flow.
 
 :::note
 Always request the minimal permission scopes necessary for your use case.
-:::
+::: -->
