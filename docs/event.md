@@ -32,7 +32,7 @@ This api use Token get from Oauth2 as an authentication method.
 | ---- | ---------- | ----------- | -------- | ---- | ------- |
 | customer_id | URL | Customer Id in Portal | <Highlight color="#d73232">Required</Highlight> | string | 123023902 |
 | limit | URL | Quantity of event you want to fetch | <Highlight color="#66ffcc">Optional</Highlight> | number | 10 |
-| event_filters | URL | List event filter in response | <Highlight color="#66ffcc">Optional</Highlight> | string | [{%22event_action_id%22:%20-103,%20%22event_category_id%22:%20-11}] |
+| event_filters | URL | List event filter in response | <Highlight color="#66ffcc">Optional</Highlight> | string | [{ %22event_action_id%22:%20-103,%20%22event_category_id%22:%20-11}] |
 
 
 ## Response
