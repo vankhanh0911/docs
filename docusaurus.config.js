@@ -7,8 +7,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Antsomi Documentation",
-  tagline: "Provides detailed information on how to effectively use the Antsomi platform.",
-  url: "https://your-docusaurus-test-site.com",
+  tagline:
+    "Provides detailed information on how to effectively use the Antsomi platform.",
+  url: "https://vankhanh0911.github.io/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -16,7 +17,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "antsomi", // Usually your GitHub org/user name.
+  organizationName: "vankhanh0911", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
