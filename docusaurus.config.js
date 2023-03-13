@@ -10,7 +10,7 @@ const config = {
   tagline:
     "Provides detailed information on how to effectively use the Antsomi platform.",
   url: "https://vankhanh0911.github.io/",
-  baseUrl: "/",
+  baseUrl: "/docs/build",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
