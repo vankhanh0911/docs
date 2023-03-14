@@ -9,16 +9,16 @@ const config = {
   title: "Antsomi Documentation",
   tagline:
     "Provides detailed information on how to effectively use the Antsomi platform.",
-  url: "https://vankhanh0911.github.io/",
-  baseUrl: "/docs",
+  url: "https://irisnikita.github.io",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "vankhanh0911", // Usually your GitHub org/user name.
-  projectName: "docs", // Usually your repo name.
+  organizationName: "irisnikita", // Usually your GitHub org/user name.
+  projectName: "antsomi-docs", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
