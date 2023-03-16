@@ -74,9 +74,19 @@ const config = {
             to: "docs/Authentication/over-view",
           },
           {
-            label: "Conventions",
+            label: "Coding Style Guide",
             position: "left",
-            to: "docs/convention/over-view",
+            to: "docs/coding-style-guide/over-view",
+          },
+          {
+            label: "Packages",
+            position: "left",
+            items: [
+              {
+                label: "@antscorp/eslint-config-antsomi",
+                to: "docs/packages/eslint-config-antsomi/introduction",
+              },
+            ],
           },
         ],
       },

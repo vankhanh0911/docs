@@ -23,11 +23,17 @@ const sidebars = {
       items: ["Authentication/over-view"],
     },
   ],
-  convention: ["Convention/over-view", "Convention/common" ,"Convention/JavaScript/index", {
-    type: "category",
-    label: "FrontEnd",
-    items: ["Convention/FrontEnd/ReactJs/index"]
-  }],
+  codingStyleGuide: [
+    "CodingStyleGuide/over-view",
+    "CodingStyleGuide/common",
+    "CodingStyleGuide/JavaScript/index",
+    {
+      type: "category",
+      label: "FrontEnd",
+      items: ["CodingStyleGuide/FrontEnd/ReactJs/index"],
+    },
+  ],
+  packages: ["Packages/EslintConfigAntsomi/introduction"],
 
   // But you can create a sidebar manually
   /*
