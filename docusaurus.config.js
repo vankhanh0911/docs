@@ -51,7 +51,7 @@ const config = {
           //   "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve("./src/css/custom.scss"),
         },
       }),
     ],
@@ -60,23 +60,41 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        appId: "N5TQWTCS8U",
+        apiKey: "241fa6c672f6e6dd684b82005614160b",
+        indexName: "antsomi-vercel",
+        contextualSearch: true,
+        externalUrlRegex: "external\\.com|domain\\.com",
+      },
       navbar: {
         // title: "API Docs",
         logo: {
           alt: "Antsomi Logo",
-          src: "https://st-home.antsomi.com/wp-content/uploads/2020/04/Antsomi-CDP-365-logo.png",
+          src: "https://st-media-template.antsomi.com/upload/2023/03/17/17e65c4f-91d7-4351-a752-3003ee4fa9f5.png",
         },
-        hideOnScroll: true,
+        hideOnScroll: false,
         items: [
+          // {
+          //   label: "API Docs",
+          //   position: "left",
+          //   to: "docs/Authentication/over-view",
+          // },
+          { to: "blog", label: "Blog", position: "right" },
           {
-            label: "API Docs",
+            label: "Coding Style Guide",
             position: "left",
-            to: "docs/Authentication/over-view",
+            to: "docs/coding-style-guide/over-view",
           },
           {
-            label: "Conventions",
+            label: "Packages",
             position: "left",
-            to: "docs/convention/over-view",
+            items: [
+              {
+                label: "@antscorp/eslint-config-antsomi",
+                to: "docs/packages/eslint-config-antsomi/introduction",
+              },
+            ],
           },
         ],
       },
@@ -88,6 +106,21 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+  plugins: [
+    "docusaurus-plugin-sass",
+    async function myPlugin(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
 };
 
 module.exports = config;

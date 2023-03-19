@@ -1,0 +1,149 @@
+---
+title: Common Style Guide
+description: Common coding convention
+slug: /coding-style-guide/common
+---
+
+## Grouping import
+
+  - Grouping the `import`s into a group by commenting for easy debugging.
+
+  ```jsx
+  // bad
+  import { get } from "lodash/get";
+  import classnames from "classnames";
+  import { Button } from "Components/Atom/Button";
+  import { checkJson } from "Utils/common";
+
+  // good
+  // Libraries
+  import { get } from "lodash/get";
+  import classnames from "classnames";
+
+  // Atoms
+  import { Button } from "Components";
+
+  // Utils
+  import { checkJson } from "Utils/common";
+  ```
+
+## Prevent "Undefined" Error
+
+  - Check Variables before using
+
+  ```jsx
+  // bad
+  bar.zoo = "fizz";
+
+  // good
+  if (bar && bar.zoo) {
+    bar.zoo = "fizz";
+  }
+  ```
+
+  - Use `get`, `set`
+
+  > If Object has many nested property like `foo.bar.z.c` insead of
+  > checking like that `if (foo && foo.bar && foo.bar && foo.bar.z && foo.bar.z.c)` we can use `get, set` of [lodash](https://lodash.com/) for faster.
+
+  ```jsx
+  import { get, set } from "lodash";
+
+  // Get value
+  // bad
+  let newValue = foo.bar.z.cs;
+
+  // good
+  const newValue = get(foo, "bar.z.cs", "");
+
+  // Set value
+  // bad
+  foo.bar.z.cs = "bazz";
+
+  // good
+  set(foo, "bar.z.cs", "bazz");
+  ```
+
+  - Check Function before using
+
+  ```jsx
+  // bad
+  callbackFunction();
+
+  // good
+  if (typeof callbackFunction === "function") {
+    callbackFunction();
+  }
+  ```
+
+  :::note
+
+  If you know for sure that the variable or function always exists, then skip those steps.
+
+  :::
+
+## Try catch in function
+
+  > Using a try-catch block to handle exceptions that may occur during the execution of a program
+  
+  ```jsx
+  // Utils
+  import { handleError } from 'app/utils/handleError';
+
+  
+  const PATH = 'path_of_current_file'
+
+  // bad
+  function calculateRectangleArea(width, height) {
+    return width * height;
+  }
+
+  // good
+  function calculateRectangleArea(width, height) {
+    try {
+      return width * height;
+    } catch (error) {
+      // TODO: Handle error
+      handleError(error, {
+          path: PATH,
+          name: '',
+          args: {}
+      });
+    }
+  }
+  ```
+
+:::note
+
+`handleError` is a util function for getting error information to monitor log
+
+:::
+
+
+## Write JSDoc for util functions
+
+> JSDoc can help improve the quality and maintainability of your code by providing clear, standardized documentation that can be used to support development, testing, and optimization.
+
+```jsx
+// bad
+function calculateRectangleArea(width, height) {
+  return width * height;
+}
+
+// good
+/**
+  * Calculates the area of a rectangle.
+  * @param {number} width - The width of the rectangle.
+  * @param {number} height - The height of the rectangle.
+  * @returns {number} The area of the rectangle.
+*/
+function calculateRectangleArea(width, height) {
+  return width * height;
+}
+```
+
+:::note
+
+[Official documentation for JSDoc](https://jsdoc.app/)
+
+:::

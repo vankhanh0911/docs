@@ -1,0 +1,83 @@
+[
+  {
+    "key": "1",
+    "name": "Huỳnh Văn Khánh",
+    "nickName": "khanhhv",
+    "mail": "khanhhv@antsomi.com",
+    "googleUrl": "https://contacts.google.com/khanhhv@antsomi.com",
+    "imageUrl": "https://lh3.googleusercontent.com/a-/ACB-R5QEe2wQF3-n3UBiSWM0szVrm5vwy8zIk2Ec2HuU=s400",
+    "role": "leader"
+  },
+  {
+    "key": "2",
+    "name": "Huỳnh Ngọc Thắng",
+    "nickName": "thanghn",
+    "mail": "thanghn@antsomi.com",
+    "googleUrl": "https://contacts.google.com/thanghn@antsomi.com",
+    "imageUrl": "https://lh3.googleusercontent.com/a-/ACB-R5SDO8QMKslrd7IUCRqeNpFxWrZcVRm-H1hzEcSF=s800",
+    "role": "senior"
+  },
+  { 
+    "key": "3",
+    "name": "Lê Thành Đạt",
+    "nickName": "datlt",
+    "mail": "datlt@antsomi.com",
+    "googleUrl": "https://contacts.google.com/datlt@antsomi.com",
+    "imageUrl": "https://lh3.googleusercontent.com/a-/ACB-R5QPN7lIOQrQB9EAqNVcM7m1QvnQlat-RvjVsn-k=s800",
+    "role": "executive"
+  },
+  {
+    "key": "4",
+    "name": "Phan Đình Thế Thiện",
+    "nickName": "thienpdt",
+    "mail": "thienpdt@ansomi.com",
+    "googleUrl": "https://contacts.google.com/thienpdt@antsomi.com",
+    "imageUrl": "https://lh3.googleusercontent.com/a-/ACB-R5QKkbOOm3UP6kEr21d0fWKnNlkD0YIbH0QwjceKWQ=s800",
+    "role": "executive"
+  },
+  {
+    "key": "5",
+    "name": "Nguyễn Lương Trường Vĩ",
+    "nickName": "vinlt",
+    "mail": "vinlt@antsomi.com",
+    "googleUrl": "https://contacts.google.com/vinlt@antsomi.com",
+    "imageUrl": "https://lh3.googleusercontent.com/a/AGNmyxa0aL71EFgqWqKsVHlutJGUlx3eyYnujFaS_OPp=s800",
+    "role": "executive"
+  },
+  {
+    "key": "6",
+    "name": "Lê Nguyễn Hoàng Khang",
+    "nickName": "khanglng",
+    "mail": "khanglng@antsomi.com",
+    "googleUrl": "https://contacts.google.com/khanglng@antsomi.com",
+    "imageUrl": "https://lh3.googleusercontent.com/a-/ACB-R5RJvHaEAHs8MFqfrAZ9zy5eP0iLmkbNlMK0tQcS=s800",
+    "role": "executive"
+  },
+  {
+    "key": "7",
+    "name": "Nguyễn Bảo Khánh",
+    "nickName": "khanhnb",
+    "mail": "khanhnb@antsomi.com",
+    "googleUrl": "https://contacts.google.com/khanhnb@antsomi.com",
+    "imageUrl": "https://lh3.googleusercontent.com/a-/ACB-R5S5HQyFGK1E2X8fKxMSAEZ9njbuGfP29crLc7x4=s800",
+    "role": "executive"
+  },
+  {
+    "key": "8",
+    "name": "Cao Ngọc Cường",
+    "nickName": "cuongcn",
+    "mail": "cuongcn@antsomi.com",
+    "googleUrl": "https://contacts.google.com/cuongcn@antsomi.com",
+    "imageUrl": "https://lh3.googleusercontent.com/a-/ACB-R5ST8O_XPOHOt6udPbWoSinEBPYsdrZNGc69KxgD=s800",
+    "role": "executive"
+  },
+  {
+    "key": "9",
+    "name": "Nguyễn Duy Khánh",
+    "nickName": "khanhnd",
+    "mail": "khanhnd@antsomi.com",
+    "googleUrl": "https://contacts.google.com/khanhnd@antsomi.com",
+    "imageUrl": "https://lh3.googleusercontent.com/a-/ACB-R5TVkYEMTxM4FrEm86w7g1TJUtFFL8Gfk9q-B80r=s800",
+    "role": "executive"
+  }
+]

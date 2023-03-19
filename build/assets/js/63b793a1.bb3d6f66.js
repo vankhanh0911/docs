@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkkhanhhv_docs=self.webpackChunkkhanhhv_docs||[]).push([[3238],{2724:a=>{a.exports=JSON.parse('{"label":"react-query","permalink":"/docs/build/blog/tags/react-query","allTagsPath":"/docs/build/blog/tags","count":1}')}}]);

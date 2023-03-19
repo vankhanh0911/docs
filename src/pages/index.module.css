@@ -21,3 +21,14 @@
   align-items: center;
   justify-content: center;
 }
+
+.banner__logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__logo img {
+  @apply rounded-full overflow-hidden;
+}
