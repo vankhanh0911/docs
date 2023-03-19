@@ -1,0 +1,257 @@
+---
+slug: advanced-react-query
+title: Advanced React Query
+authors: vinlt
+tags: [reactjs, react-query, frontend]
+image: './react-query.png'
+description: Advanced react query
+---
+
+import BannerImage from './react-query.png';
+
+<BlogBanner 
+  imageUrl={BannerImage}
+/>
+
+React Query is a popular data management library that makes fetching, caching, and updating data in React applications easy and efficient. It simplifies complex data fetching patterns, optimizes network requests, and provides real-time updates without requiring complex configuration.
+
+<!--truncate-->
+
+In this blog, we'll explore some advanced features of React Query, along with some examples to illustrate how to use them.
+
+## 1. Query Keys
+
+Query keys are the unique identifiers for queries in React Query. They help React Query keep track of the data and cache it efficiently. When a query key changes, React Query will invalidate the cache and refetch the data if needed.
+
+Here's an example of how to use query keys:
+
+```jsx
+const queryClient = new QueryClient()
+
+function App() {
+  const { data, isLoading } = useQuery(
+    ['todos', { status: 'active' }],
+    fetchTodos
+  )
+
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <div>
+      <h1>Todos</h1>
+      <ul>
+        {data.map((todo) => (
+          <li key={todo.id}>{todo.title}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+In this example, we're using an array as a query key. The first element is a string that represents the name of the query, and the second element is an object that represents the query parameters. This way, we can have multiple queries with different parameters, but with the same name.
+
+## 2. Query function
+
+The query function is responsible for fetching the data for a query. It receives the query parameters as an argument and returns a Promise with the data.
+
+Here's an example of how to use a query function:
+
+```jsx
+function fetchTodos(status) {
+  return axios.get(`/todos?status=${status}`).then((res) => res.data)
+}
+
+const queryClient = new QueryClient()
+
+function App() {
+  const { data, isLoading } = useQuery(
+    ['todos', 'active'],
+    () => fetchTodos('active')
+  )
+
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <div>
+      <h1>Todos</h1>
+      <ul>
+        {data.map((todo) => (
+          <li key={todo.id}>{todo.title}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+In this example, we're using an arrow function as a query function. The arrow function receives the query parameter ('active') as an argument and returns a Promise with the data.
+
+## 3. Query Variables
+
+Query variables are similar to query parameters, but they are used for dynamic queries. Query variables can change during the lifecycle of the component, and React Query will automatically update the data accordingly.
+
+Here's an example of how to use query variables:
+
+```jsx
+const queryClient = new QueryClient()
+
+function App() {
+  const [status, setStatus] = useState('active')
+
+  const { data, isLoading } = useQuery(
+    ['todos', status],
+    () => fetchTodos(status)
+  )
+
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <div>
+      <h1>Todos</h1>
+      <button onClick={() => setStatus('active')}>Active</button>
+      <button onClick={() => setStatus('completed')}>Completed</button>
+      <ul>
+        {data.map((todo) => (
+          <li key={todo.id}>{todo.title}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+In this example, we're using the useState hook to manage the status variable. We're also using the status variable as a query variable, so React Query will automatically update the data when the status changes.
+
+## 4. Mutations
+
+Mutations are used to update or create data on the server. React Query provides a simple and powerful way to manage mutations with its useMutation hook.
+
+Here's an example of how to use useMutation:
+
+```jsx
+const queryClient = new QueryClient()
+
+function App() {
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+
+  const { mutate, isLoading } = useMutation(addTodo, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('todos')
+      setTitle('')
+      setDescription('')
+    },
+  })
+
+  function handleSubmit(e) {
+    e.preventDefault()
+
+    mutate({ title, description })
+  }
+
+  return (
+    <div>
+      <h1>Add Todo</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Title:
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </label>
+        <label>
+          Description:
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </label>
+        <button type="submit" disabled={isLoading}>
+          {isLoading ? 'Saving...' : 'Save'}
+        </button>
+      </form>
+    </div>
+  )
+}
+```
+
+In this example, we're using the useMutation hook to manage the addTodo mutation. We're passing the addTodo function as the mutation function and providing an onSuccess callback to invalidate the 'todos' query and clear the form inputs.
+
+## 5. Infinite Queries
+
+Infinite queries are used to fetch a large amount of data that cannot be loaded all at once. React Query provides an easy way to manage infinite queries with its useInfiniteQuery hook.
+
+Here's an example of how to use useInfiniteQuery:
+
+```jsx
+const queryClient = new QueryClient()
+
+function App() {
+  const fetchTodos = async (key, nextCursor = 0) => {
+    const response = await fetch(`/api/todos?cursor=${nextCursor}`)
+    const data = await response.json()
+    return { todos: data.todos, nextCursor: data.nextCursor }
+  }
+
+  const {
+    data,
+    isLoading,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  } = useInfiniteQuery('todos', fetchTodos, {
+    getNextPageParam: (lastPage) => lastPage.nextCursor,
+  })
+
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <div>
+      <h1>Todos</h1>
+      {data.pages.map((page, i) => (
+        <React.Fragment key={i}>
+          {page.todos.map((todo) => (
+            <div key={todo.id}>
+              <h2>{todo.title}</h2>
+              <p>{todo.description}</p>
+            </div>
+          ))}
+        </React.Fragment>
+      ))}
+      {hasNextPage && (
+        <button
+          onClick={() => fetchNextPage()}
+          disabled={isFetchingNextPage}
+        >
+          {isFetchingNextPage ? 'Loading more...' : 'Load more'}
+        </button>
+      )}
+    </div>
+  )
+}
+```
+
+In this example, we're using the useInfiniteQuery hook to manage the infinite todos query. We're passing the fetchTodos function as the query function and providing a getNextPageParam callback to extract the nextCursor from the last page. We're also using the fetchNextPage function to fetch the next page of data and the hasNextPage and isFetchingNextPage flags to control the load more button
+
+## Conclusion
+
+React Query is a powerful library that simplifies data fetching and state management in React applications. In this blog post, we covered advanced concepts such as caching, prefetching, mutations, and infinite queries.
+
+Caching can improve application performance by storing data in a cache that can be reused across components. Prefetching can load data before it's needed, improving perceived performance. Mutations update or create data on the server, and React Query provides a simple and powerful way to manage mutations with its useMutation hook. Infinite queries fetch large amounts of data that cannot be loaded all at once, and React Query provides an easy way to manage them with its useInfiniteQuery hook.
+
+By mastering these advanced concepts, you can take full advantage of React Query's capabilities and build robust and performant applications.
+
+
+
+

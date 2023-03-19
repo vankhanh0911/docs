@@ -33,7 +33,14 @@ const sidebars = {
       items: ["CodingStyleGuide/FrontEnd/ReactJs/index"],
     },
   ],
-  packages: ["Packages/EslintConfigAntsomi/introduction"],
+  packages: [
+    "Packages/EslintConfigAntsomi/introduction",
+    {
+      type: "category",
+      label: "Getting Started",
+      items: ["Packages/EslintConfigAntsomi/GettingStarted/installation"],
+    },
+  ],
 
   // But you can create a sidebar manually
   /*
