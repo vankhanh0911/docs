@@ -5,7 +5,7 @@ import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-// import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import IdealImage from "@theme/IdealImage";
 
 // Static
 import * as waveAnimation from "@site/static/lottie/wave-animation.json";
@@ -75,9 +75,9 @@ function HomepageHeader() {
               width={500}
             />
           </div>
-          <img
+          <IdealImage
             className="lg:w-[380px] lg:h-[380px] w-[300px] h-[300px] -z-10"
-            src={TeamWorkImageUrl}
+            img={TeamWorkImageUrl}
             width="400"
             height="400"
             alt=""

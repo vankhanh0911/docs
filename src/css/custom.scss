@@ -44,3 +44,37 @@
   height: 1.2rem;
   margin-right: 0px;
 }
+
+.navbar__link--active {
+  .nav__icon {
+    background-color: var(--ifm-navbar-link-hover-color);
+  }
+}
+
+.navbar__link {
+  &:hover {
+    .nav__icon {
+      background-color: var(--ifm-navbar-link-hover-color);
+    }
+  }
+}
+
+/* Icons */
+.nav__icon {
+  @apply w-5 h-5 mr-1;
+  background-color: var(--ifm-navbar-link-color);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.icon-book {
+  -webkit-mask-image: url("/icons/book.svg");
+  mask-image: url("/icons/book.svg");
+}
+
+.icon-deployed-code {
+  -webkit-mask-image: url("/icons/deployed-code.svg");
+  mask-image: url("/icons/deployed-code.svg");
+}

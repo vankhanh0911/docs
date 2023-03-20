@@ -41,6 +41,7 @@ const sidebars = {
       items: ["Packages/EslintConfigAntsomi/GettingStarted/installation"],
     },
   ],
+  workflow: ["Workflow/over-view"],
 
   // But you can create a sidebar manually
   /*
