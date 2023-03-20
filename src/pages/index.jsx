@@ -9,7 +9,7 @@ import IdealImage from "@theme/IdealImage";
 
 // Static
 import * as waveAnimation from "@site/static/lottie/wave-animation.json";
-import TeamWorkImageUrl from "@site/static/img/teamwork.png";
+import TeamWorkImageUrl from "@site/static/img/teamwork.webp";
 
 // Styles
 import styles from "./index.module.css";
