@@ -75,13 +75,15 @@ function HomepageHeader() {
               width={500}
             />
           </div>
-          <IdealImage
-            className="lg:w-[380px] lg:h-[380px] w-[300px] h-[300px] -z-10"
-            img={TeamWorkImageUrl}
-            width="400"
-            height="400"
-            alt=""
-          />
+          <div className="rounded-full overflow-hidden">
+            <IdealImage
+              className="lg:w-[380px] lg:h-[380px] w-[300px] h-[300px] -z-10"
+              img={TeamWorkImageUrl}
+              width="400"
+              height="400"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>
