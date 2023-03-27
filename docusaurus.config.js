@@ -92,6 +92,16 @@ const config = {
             to: "docs/coding-style-guide/over-view",
           },
           {
+            label: "Conventions",
+            position: "left",
+            items: [
+              {
+                label: "Conventional Commits",
+                to: "docs/conventions/conventional-commits/over-view",
+              },
+            ],
+          },
+          {
             label: "Packages",
             position: "left",
             items: [

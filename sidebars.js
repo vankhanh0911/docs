@@ -42,6 +42,10 @@ const sidebars = {
     },
   ],
   workflow: ["Workflow/OverView/index"],
+  conventionalCommits: [
+    "Conventions/ConventionalCommits/over-view",
+    "Conventions/ConventionalCommits/rules",
+  ],
 
   // But you can create a sidebar manually
   /*
