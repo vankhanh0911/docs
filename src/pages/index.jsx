@@ -5,11 +5,11 @@ import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-// import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import IdealImage from "@theme/IdealImage";
 
 // Static
 import * as waveAnimation from "@site/static/lottie/wave-animation.json";
-import TeamWorkImageUrl from "@site/static/img/teamwork.png";
+import TeamWorkImageUrl from "@site/static/img/teamwork.webp";
 
 // Styles
 import styles from "./index.module.css";
@@ -75,13 +75,15 @@ function HomepageHeader() {
               width={500}
             />
           </div>
-          <img
-            className="lg:w-[380px] lg:h-[380px] w-[300px] h-[300px] -z-10"
-            src={TeamWorkImageUrl}
-            width="400"
-            height="400"
-            alt=""
-          />
+          <div className="rounded-full overflow-hidden">
+            <IdealImage
+              className="lg:w-[380px] lg:h-[380px] w-[300px] h-[300px] -z-10"
+              img={TeamWorkImageUrl}
+              width="400"
+              height="400"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -41,6 +41,16 @@ const sidebars = {
       items: ["Packages/EslintConfigAntsomi/GettingStarted/installation"],
     },
   ],
+  workflow: ["Workflow/OverView/index"],
+  conventionalCommits: [
+    "Conventions/ConventionalCommits/over-view",
+    "Conventions/ConventionalCommits/rules",
+    {
+      type: "category",
+      label: "Extensions",
+      items: ["Conventions/ConventionalCommits/Extensions/open-commit"],
+    },
+  ],
 
   // But you can create a sidebar manually
   /*

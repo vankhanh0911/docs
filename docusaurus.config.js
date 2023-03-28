@@ -82,9 +82,24 @@ const config = {
           // },
           { to: "blog", label: "Blog", position: "right" },
           {
+            label: "Workflow",
+            position: "left",
+            to: "docs/workflow/over-view",
+          },
+          {
             label: "Coding Style Guide",
             position: "left",
             to: "docs/coding-style-guide/over-view",
+          },
+          {
+            label: "Conventions",
+            position: "left",
+            items: [
+              {
+                label: "Conventional Commits",
+                to: "docs/conventions/conventional-commits/over-view",
+              },
+            ],
           },
           {
             label: "Packages",
@@ -109,6 +124,16 @@ const config = {
 
   plugins: [
     "docusaurus-plugin-sass",
+    [
+      "@docusaurus/plugin-ideal-image",
+      {
+        quality: 80,
+        max: 1030, // max resized image's size.
+        min: 640, // min resized image's size. if original is lower, use that size.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+        disableInDev: false,
+      },
+    ],
     async function myPlugin(context, options) {
       return {
         name: "docusaurus-tailwindcss",
