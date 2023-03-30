@@ -111,6 +111,27 @@ const config = {
               },
             ],
           },
+          {
+            label: "Components Docs",
+            position: "left",
+            items: [
+              {
+                href: "https://antsomi-ui.vercel.app/",
+                label: "Antsomi UI",
+                "aria-label": "Antsomi UI",
+              },
+              {
+                href: "https://antsomi-charts.vercel.app/",
+                label: "Antsomi Charts",
+                "aria-label": "Antsomi Charts",
+              },
+              {
+                href: "https://antsomi-cdp-components.vercel.app/",
+                label: "Antsomi CDP Components",
+                "aria-label": "Antsomi CDP Components",
+              },
+            ],
+          },
         ],
       },
       footer: {
